@@ -1,0 +1,156 @@
+<!--
+title: Move to another Mastodon server
+description: 
+published: true
+date: 2023-01-02T15:42:59.697Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-01-02T14:46:50.262Z
+-->
+
+<h1 id="move-to-another-mastodon-server" class="toc-header"> Move to another Mastodon server</h1>
+<blockquote class="is-info">
+<p>You will <em>not</em> lose your followers; the Mastodon network will make sure to migrate them to the <strong>new</strong> server transparently and forward any messages sent to your <strong>old</strong> account to the <strong>new</strong> one. People with <code>private</code> accounts will need to accept your follow request again.</p>
+<p>Posts you made on the <strong>old</strong> server can’t be moved to the <strong>new</strong> server; the posts will remain on the <strong>old</strong> server until you delete that account (optional).</p>
+<p><em>Almost</em> all other data can be moved manually, and is covered within this guide.</p>
+</blockquote>
+<p>This guide will help you move your account to another server.</p>
+<p>You can check out the <a href="https://docs.joinmastodon.org/user/moving/" target="_blank" class="is-external-link">official documentation on moving accounts between servers</a> if this guide isn’t clear.</p>
+<h2 id="h-1-guide-configuration" class="toc-header"> 1. Guide configuration</h2>
+<p>To make the guide as easy as possible, please provide which server you are moving <strong>from</strong> and <strong>to</strong> below.</p>
+<p>Filling out the two fields below will make all links in this guide automatically point to your correct servers and the pages you need to access. It’s, of course, entirely optional if you prefer not to fill it out.</p>
+<p>!!! tip “You can write either the <code>server domain name</code> (ex. <code>mastodon.social</code>) or any link from the server (ex. <code>https://mastodon.social/profile</code>).”</p>
+<ol>
+<li>I’m <strong>leaving</strong> my <strong>old</strong> server at: <input id="from-server" placeholder="Write or paste your old server domain/link" class="server-selector"></li>
+<li>and <strong>joining</strong> my <strong>new</strong> server at: <input id="to-server" placeholder="Write or paste your new server domain/link" class="server-selector"></li>
+</ol>
+<p><em>If a field has a red border, it’s empty or not configured correctly.</em></p>
+<h2 id="h-2-export-your-data" class="toc-header"> 2. Export your data</h2>
+<blockquote class="is-info">
+<p><strong>These steps all take place on the <em>old</em> server (ex. <span identity="old" tag="code" default="old-server.com"></span>)</strong></p>
+<p>In this step, we export your data from the <strong>old</strong> server, so we can import it later on the <strong>new</strong> server.</p>
+<p>If you don’t care about your old data - or don’t have any - feel free to skip this step fully or partially.</p>
+</blockquote>
+<blockquote class="is-warning">
+<p>Do not use <code>Request your archive</code> for migrating data; you can <em>not</em> import that file on the new server. It’s great for regular backups though</p>
+</blockquote>
+<figure markdown="">
+![Export page](img/export.png){align="right" width="50%" loading=lazy}
+<figcaption>The export data page looks like this.</figcaption>
+</figure>
+<p>On the <strong>old</strong> server, navigate to the <a identity="old" path="/settings/export" href="#"><code>Preferences -&gt; Import and Export</code></a> page in the left menu.</p>
+<p>In the table, click on the <code>⬇️ CSV</code> link for each kind of data you want to migrate to the new server.</p>
+<ul>
+<li><a identity="old" target="_blank" path="/settings/exports/follows.csv">⬇️ Click to download your <code>follows list</code></a></li>
+<li><a identity="old" target="_blank" path="/settings/exports/blocks.csv">⬇️ Click to download your <code>block list</code></a></li>
+<li><a identity="old" target="_blank" path="/settings/exports/mutes.csv">⬇️ Click to download your <code>mute list</code></a></li>
+<li><a identity="old" target="_blank" path="settings/exports/domain_blocks.csv">⬇️ Click to download your <code>domain blocks</code></a></li>
+<li><a identity="old" target="_blank" path="/settings/exports/bookmarks.csv">⬇️ Click to download your <code>bookmarks</code></a></li>
+</ul>
+<p>Note that the following can’t be imported:</p>
+<ul>
+<li><code>Lists</code></li>
+<li><code>Followers</code> - they are automatically handled later in the guide.</li>
+</ul>
+<blockquote class="is-success">
+<p><strong>Done!</strong></p>
+<p>Now that we have a backup of your <strong>old</strong> data, we can import it on the new server later in this guide.</p>
+<p>In the next step, we will prepare your <strong>new</strong> account for the server migration.</p>
+</blockquote>
+<h2 id="h-3-setting-up-your-new-account" class="toc-header"> 3. Setting up your new account</h2>
+<blockquote class="is-info">
+<p><strong>These steps all take place on the <strong>new</strong> server (ex. <span identity="new" tag="code" default="new-server.com"></span>)</strong></p>
+<p>This step configures your <strong>new</strong> account to accept the account migration from the <strong>old</strong> server as well as copying your profile information.</p>
+</blockquote>
+<p><img src="/move-server-guide/export.png" alt="export.png" width="50%" class="align-right"></p>
+<ol>
+<li>If you haven’t already, <a identity="new" target="_blank" path="/auth/sign_up">create an account on the <strong>new</strong> server.</a></li>
+<li>Create an account alias on <strong>new</strong> server.
+<ol>
+<li>Navigate to <a identity="new" target="_blank" path="/settings/profile"><code>Preferences -&gt; Profile</code></a></li>
+<li>Scroll to the bottom of the page and click <a identity="new" target="_blank" path="/settings/aliases"><code>Moving from a different account</code></a></li>
+<li>Write your <em>full</em> username from your <strong>old</strong> server in the <code>Handle of the old account</code> field.<br>
+(ex. <span identity="old" tag="code" prefix="your-user@" default="old-server.com"></span>)</li>
+<li>Click <code>Create alias</code> button.</li>
+</ol>
+</li>
+</ol>
+<div style="clear: both">
+<blockquote>
+<p><strong>Setting up your profile on the new server</strong></p>
+<p>Your account on the <strong>new</strong> server is probably a bit empty. No <code>bio</code>, <code>profile picture</code> and so on.</p>
+<p>This is an excellent time to copy this over from your <strong>old</strong> account.</p>
+<ol class="is-info">
+<li><a identity="old" target="_blank" path="/settings/profile">Open your <strong>old</strong> account (<code>Preferences -&gt; Profile</code>)</a></li>
+<li><a identity="new" target="_blank" path="/settings/profile">Open your <strong>new</strong> account (<code>Preferences -&gt; Profile</code>)</a></li>
+<li>Start copying fields one by one and tweak as necessary</li>
+</ol>
+</blockquote>
+<blockquote class="is-success">
+<p><strong>Done!</strong></p>
+<p>Your <strong>new</strong> account is now configured to accept the migration request from your <strong>old</strong> server and your profile looks amazing with a picture, bio and so forth, just like your old account.</p>
+<p>In the next step, we will start the account migration process.</p>
+</blockquote>
+<h2 id="h-4-migrate-to-the-new-server" class="toc-header"> 4. Migrate to the new server</h2>
+<blockquote class="is-info">
+<p><strong>These steps all take place on the old server (ex. <span identity="old" tag="code" default="old-server.com"></span>)</strong></p>
+<p>This still will move all your followers to the new server. The change is transparent to your followers, and neither they nor you need to take any additional manual steps beyond what’s covered in this guide.</p>
+</blockquote>
+<blockquote class="is-warning">
+<p><strong>Please read the warning text on the <em>migration page</em> to make sure you are okay with the consequences.</strong></p>
+</blockquote>
+<p><img src="/move-server-guide/migrate-account.png" alt="Migrate Account Page" width="50%" class="align-right"></p>
+<ol>
+<li>Navigate to <a identity="old" target="_blank" path="/settings/profile"><code>Preferences -&gt; Profile</code></a></li>
+<li>Scroll to the bottom of the page and click <a identity="old" target="_blank" path="/settings/migration"><code>Move to a different account</code></a></li>
+<li>For the <code>Handle of the new account</code> field, enter your username on the <strong>new</strong> server<br>
+(ex. <span identity="new" tag="code" prefix="@your-user@" default="new-server.com"></span>)</li>
+<li>For the <code>Password</code> field, enter the password you use on the <strong>old</strong> server (ex. <span identity="old" tag="code" default="old-server.com"></span>)</li>
+<li>Read the description on the page <em>carefully</em></li>
+<li>Click <code>Move followers</code></li>
+</ol>
+<div style="clear: both">
+<blockquote class="is-success">
+<p><strong>Done!</strong></p>
+<p>The Mastodon network will move your followers from the <strong>old</strong> server to the <strong>new</strong> one.</p>
+<p>Depending on server capacity, this can take anywhere from a minute to an hour.</p>
+<p>We can let the migration run in the background, continue to the next step, and import your old data into the new server.</p>
+</blockquote>
+<h2 id="h-5-import-your-data" class="toc-header"> 5. Import your data</h2>
+<blockquote class="is-info">
+<p>These steps all take place on the <strong>new</strong> server (ex. <span identity="new" tag="code" default="new-server.com"></span>)</p>
+</blockquote>
+<p><img src="/move-server-guide/import.png" alt="Import data on the new server" width="50%" class="align-right"></p>
+<ol>
+<li>Navigate to <a identity="new" target="_blank" path="/settings/import"><code>Preferences -&gt; Import and export -&gt; Import</code></a></li>
+<li>For <em>each</em> option in the <code>Import type</code> dropdown, do the following
+<ol>
+<li>Select the <code>Import type</code> you wish to import.<br>
+I would recommend taking them in the order they appear in the dropdown</li>
+<li>Select the file you exported corresponding to the <code>Import type</code> you selected by clicking the file input (<code>Choose file</code>)
+<ol>
+<li><code>Following list</code> file is called something like <code>follows.csv</code> in your Downloads folder</li>
+<li><code>Blocking list</code> file is called something like <code>blocks.csv</code> in your Downloads folder</li>
+<li><code>Muting list</code> file is called something like <code>mutes.csv</code> in your Downloads folder</li>
+<li><code>Domain blocking list</code> file is called something like <code>domain_blocks.csv</code> in your Downloads folder</li>
+<li><code>Bookmarks</code> file is called something like <code>bookmarks.csv</code> in your Downloads folder</li>
+</ol>
+</li>
+<li>Make sure to select <code>Merge</code> and <strong>not</strong> <code>Overwrite</code></li>
+<li>Click <code>Upload</code></li>
+</ol>
+</li>
+</ol>
+<blockquote class="is-success">
+<p><strong>Done!</strong></p>
+<p>All your data has now been imported to the new server, and things should really start to look and feel like home again.</p>
+<p>In the next, and final, step, we’ll set up your profile information on the new server.</p>
+</blockquote>
+<h2 id="h-6-wrapping-up" class="toc-header"> 6. Wrapping up</h2>
+<p>Now that you are all set up on your new server, check out these guides</p>
+<ul>
+<li><a href="getting-started-on-mastodon.md" class="is-asset-link">Getting started on Mastodon</a></li>
+<li><a href="tips.md" class="is-asset-link">Tips and Tricks</a></li>
+<li><a href="twitter-and-mastodon.md" class="is-asset-link">Twitter and Mastodon</a></li>
+</ul>
+</div></div>

@@ -2,7 +2,7 @@
 title: Choosing a Mastodon server
 description: 
 published: true
-date: 2023-01-02T20:10:08.433Z
+date: 2023-01-02T20:10:09.883Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-02T14:30:40.133Z

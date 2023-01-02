@@ -2,7 +2,7 @@
 title: Tips & Tricks
 description: 
 published: true
-date: 2023-01-02T19:58:53.730Z
+date: 2023-01-02T20:10:13.010Z
 tags: mastodon, new to mastodon
 editor: markdown
 dateCreated: 2023-01-02T14:38:56.051Z

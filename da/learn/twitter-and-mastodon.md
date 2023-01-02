@@ -2,7 +2,7 @@
 title: Twitter and Mastodon
 description: 
 published: true
-date: 2023-01-02T19:59:04.386Z
+date: 2023-01-02T20:10:14.504Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-02T17:24:33.494Z

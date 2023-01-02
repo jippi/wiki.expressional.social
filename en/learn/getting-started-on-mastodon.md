@@ -2,7 +2,7 @@
 title: Getting started on Mastodon
 description: 
 published: true
-date: 2023-01-02T20:09:59.372Z
+date: 2023-01-02T17:41:45.948Z
 tags: mastodon, new to mastodon
 editor: markdown
 dateCreated: 2023-01-02T14:37:10.914Z

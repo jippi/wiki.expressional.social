@@ -1,48 +1,50 @@
 ---
-title: Flyt/Skift Mastodon server
-description: I denne guide kan du læse hvordan du flytter din profil til en ny Mastodon server, så du bevarer dine følgere.
+title: Move/change Mastodon server
+description: The guide will help you move/change Mastodon server, transferring all your data along
 published: true
-date: 2023-01-02T20:09:40.807Z
-tags: mastodon
+date: 2023-01-02T17:25:26.415Z
+tags: mastodon, new to mastodon
 editor: markdown
-dateCreated: 2023-01-02T16:43:22.287Z
+dateCreated: 2023-01-02T14:46:50.262Z
 ---
 
-# Flyt/skift Mastodon server
+# Move/change Mastodon server
 
-> Du mister ikke dine følgere, når du skifter server. Mastodon overfører dine følgere til den nye server.  
+> You will *not* lose your followers; the Mastodon network will make sure to migrate them to the **new** server transparently and forward any messages sent to your **old** account to the **new** one. People with `private` accounts will need to accept your follow request again.
 >
-> Toots fra den gamle profil kan ikke flyttes til den nye profil. De bliver på den gamle profil, indtil du sletter den (hvilket du ikke behøver at gøre). På den gamle profil efterlades en toombstone som fortæller at du nu har fået en ny profil. 
+> Posts you made on the **old** server can't be moved to the **new** server; the posts will remain on the **old** server until you delete that account (optional).
 >
-> Stor set alle andre data på din profil kan overføres manuelt, og det kan du læse i denne guide hvordan du gør.
+> *Almost* all other data can be moved manually, and is covered within this guide.
 {.is-info}
 
-I denne guide kan du læse hvordan du flytter din profil til en ny Mastodon server. 
+This guide will help you move your account to another server.
 
-Hvis du har brug for mere hjælp, så spørg om hjælp på [Expressional.social](https://expressional.social/){target="_blank"} eller kig i den [officielle Mastodon dokumentation](https://docs.joinmastodon.org/user/moving/){target="_blank"}.
+You can check out the [official documentation on moving accounts between servers](https://docs.joinmastodon.org/user/moving/){target="_blank"} if this guide isn't clear.
 
-## 1. Indtast oplysninger
+## 1. Guide configuration
 
-For at gøre denne guide så nem som mulig, kan du nedenunder indtaste den Mastodon server du flytter fra og den du flytter til, så opdateres links automatisk, så de peger på den rigtige server. Du udfylder dette i nedenstående felter. 
+To make the guide as easy as possible, please provide which server you are moving **from** and **to** below.
 
-> Du kan enten skrive `domænet for serveren` (fx. `mastodon.social`) eller indsætte et andet link fra serveren (fx. `https://mastodon.social/profile`).
+Filling out the two fields below will make all links in this guide automatically point to your correct servers and the pages you need to access. It's, of course, entirely optional if you prefer not to fill it out.
+
+> You can write either the `server domain name` (ex. `mastodon.social`) or any link from the server (ex. `https://mastodon.social/profile`).
 {.is-success}
 
-1. Min **gamle** Mastodon server som jeg skal flytte **fra** er: <input id="from-server" placeholder="Indsæt domæne eller link" class="server-selector" /> 
-1. and **joining** my **new** server at: <input id="to-server" placeholder="Indsæt domæne eller link" class="server-selector" />
+1. I'm **leaving** my **old** server at: <input id="from-server" placeholder="Write or paste your old server domain/link" class="server-selector" /> 
+1. and **joining** my **new** server at: <input id="to-server" placeholder="Write or paste your new server domain/link" class="server-selector" />
 
-*Hvis feltet har en rød kant, så er det ikke udfyldt korrekt*
+*If a field has a red border, it's empty or not configured correctly.*
 
-## 2. Eksporter dine data
+## 2. Export your data
 
-> **Disse trin skal udføres på den *gamle* server (ex. <span identity="old" tag="code" default-value="gammel-server.dk"></span>)**
+> **These steps all take place on the *old* server (ex. <span identity="old" tag="code" default-value="old-server.com"></span>)**
 >
-> I dette trin eksporterer vi data fra den **gamle** server, så de kan importeres senere på den **nye** server.
+> In this step, we export your data from the **old** server, so we can import it later on the **new** server.
 >
-> Hvis du er ligeglad med at overføre data fra din gamle server, kan du springe dette trin over.
+> If you don't care about your old data - or don't have any - feel free to skip this step fully or partially.
 {.is-info}
 
-> Brug ikke `Request your archive` til at overføre data; du kan *ikke* importere den fil til den nye server. Denne fil anvendes i stedet til regelmæssig backup af din profil.
+> Do not use `Request your archive` for migrating data; you can *not* import that file on the new server. It's great for regular backups though
 {.is-warning}
 
 ![export.png](/move-server-guide/export.png =50%x){.align-right}

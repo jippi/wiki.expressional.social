@@ -2,7 +2,7 @@
 title: Kom igang med Mastodon
 description: 
 published: true
-date: 2023-01-02T19:58:56.815Z
+date: 2023-01-02T20:09:36.288Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-02T16:07:58.018Z

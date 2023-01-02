@@ -2,7 +2,7 @@
 title: About expressional.social
 description: 
 published: true
-date: 2023-01-02T19:19:23.924Z
+date: 2023-01-02T19:59:02.836Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-02T16:54:43.825Z

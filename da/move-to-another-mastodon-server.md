@@ -2,7 +2,7 @@
 title: Flyt/Skift Mastodon server
 description: I denne guide kan du læse hvordan du flytter din profil til en ny Mastodon server, så du bevarer dine følgere.
 published: true
-date: 2023-01-02T19:18:43.101Z
+date: 2023-01-02T19:58:59.845Z
 tags: mastodon
 editor: markdown
 dateCreated: 2023-01-02T16:43:22.287Z

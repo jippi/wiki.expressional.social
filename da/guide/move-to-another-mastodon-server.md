@@ -2,7 +2,7 @@
 title: Move/change Mastodon server
 description: The guide will help you move/change Mastodon server, transferring all your data along
 published: true
-date: 2023-01-02T19:19:23.924Z
+date: 2023-01-02T19:58:55.283Z
 tags: mastodon, new to mastodon
 editor: markdown
 dateCreated: 2023-01-02T14:46:50.262Z

@@ -2,7 +2,7 @@
 title: Use your own user @ domain for Mastodon discoverability
 description: 
 published: true
-date: 2023-01-02T19:19:23.924Z
+date: 2023-01-02T19:59:06.081Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-02T17:53:45.725Z
